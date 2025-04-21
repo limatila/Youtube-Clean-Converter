@@ -16,7 +16,11 @@ def compress_single_file(file_path: Path, compressionExtension: str = DEFAULT_CO
         raise AssertionError
 
     #get folder of path
-    outputZipPath = COMPRESSION_FOLDER_PATH / (file_path.stem + compressionExtension)
+    outputZipPath: Path = COMPRESSION_FOLDER_PATH / (file_path.stem + compressionExtension)
+    
+    #Checking if already exists
+    if outputZipPath.exists():
+        return outputZipPath
 
     try:
         #for different formats: filename-fileextension.7z

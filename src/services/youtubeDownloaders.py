@@ -33,6 +33,7 @@ def download_mp3(url: str, _retry_flag: bool = False) -> Path:
 def download_mp4(url: str, _retry_flag: bool = False) -> Path:
     try:
         with YoutubeDL(YDL_OPTS['SINGLE_MP4']) as ydl:
+            #! need to change aproach
             video = ydl.extract_info(url, download=True)
             file_path = Path(ydl.prepare_filename(video)).with_suffix('.mp4')
         fileUsageLogger.debug(f"File Download Service (mp4) > new file was downloaded: {str(file_path.relative_to("./"))}")
