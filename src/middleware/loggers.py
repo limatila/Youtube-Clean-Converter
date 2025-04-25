@@ -9,6 +9,7 @@ from src.config import (
     defaultFormatter, 
     friendlyStreamFormatter,
 )
+
 performancePath: str = BASE_LOGS_PATH + 'performance.log'
 cookiesPath: str = BASE_LOGS_PATH + 'cookies.log'
 fileUsagePath: str = BASE_LOGS_PATH + 'fileUsage.log'
@@ -67,24 +68,6 @@ def _initLoggers():
 
     requestsLogger.addHandler(requestsFileHandler)
     requestsLogger.addHandler(requestsStreamHandler)
-
-
-#! need test in aws, remove try except if not necessary.
-# try:
-# _initLoggers();
-# except FileNotFoundError:
-#     from pathlib import Path
-#     #create non-existant dirs and files
-#     loggersList: list[logging.Logger] = [performanceLogger, cookiesLogger, fileUsagePath, requestsPath]
-
-#     for logger in loggersList:
-#         Path(logger).parent.mkdir(exist_ok=True, parents=True)
-
-#         currentFile = list(filter(lambda x: isinstance(x, FileHandler), logger.handlers))[0].baseFilename
-#         if not Path(currentFile).exists():
-#             Path(currentFile).write_text("")
-#     #try again
-#     _initLoggers();
 
 
 if __name__ == "__main__":
