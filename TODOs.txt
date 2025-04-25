@@ -7,9 +7,12 @@
 Later:
 6. DEPLOY in cloud - DONE
 7. deliver audio in compressed files (best option is .7z) - DONE
-8. add additional security and performance measures, for stable execution - Doing, next: Add HTTPS
+
+8. add additional security and performance measures, for stable execution - DONE
+9. add HTTPS certificate to AWS - Doing
 *- make post about into
 
-9* add more source options (Soundcloud, Spotify, Newgrounds, free-of-charge options) - Doing
-10*. add front for requests, maybe learn to create a browser extension?
+10. rewrite already existant video verification (not working rn)
+11. add more source options (Soundcloud, Spotify, Newgrounds, free-of-charge options)
+12. add front for requests, maybe learn to create a browser extension?
 *- make another post

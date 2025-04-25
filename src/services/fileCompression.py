@@ -22,6 +22,7 @@ def compress_single_file(file_path: Path, compressionExtension: str = DEFAULT_CO
     outputZipPath: Path = COMPRESSION_FOLDER_PATH / (file_path.stem + compressionExtension)
     
     #Checking if already exists
+    # BUG: if a mp3 was already zipped at this filename, it will always be delivered as mp3.
     if outputZipPath.exists():
         return outputZipPath
 
