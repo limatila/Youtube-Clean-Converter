@@ -10,7 +10,6 @@ from src.services.fileUsage_management import account_for_usage
 from src.middleware.loggers import requestsLogger
 from src.middleware.requestLimiters import ipLimiter
 from src.config import DEFAULT_REQUEST_IP_LIMIT
-from src.config import mp4_lowQualityMessage_md #!temporary
 
 downloads_router = APIRouter(prefix="/download", tags=['Download'])
 
@@ -43,7 +42,7 @@ def get_in_mp3_audio(request: Request, url: str, background: BackgroundTasks):
     else:
         raise HTTPException(status_code=500, detail="Could not resolve video conversion.")
 
-@downloads_router.get("/mp4/", description="Downloads a URL's video, in browser. Just put a video url in the input to download it (ETA: 8s)" + mp4_lowQualityMessage_md)
+@downloads_router.get("/mp4/", description="Downloads a URL's video, in browser. Just put a video url in the input to download it (ETA: 8s)")
 @ipLimiter.limit(DEFAULT_REQUEST_IP_LIMIT)
 def get_in_mp4_video(request: Request, url: str, background: BackgroundTasks):
     requestsLogger.info(f"New GET request of /download/mp4 for: {url}")

@@ -8,11 +8,14 @@ from src.middleware.loggers import fileUsageLogger
 
 COMPRESSION_FOLDER_PATH.mkdir(exist_ok=True)
 
+#Custom identifier to fileUsageLogger
+logIdentity: str = "File Compression Service > "
+
 def compress_single_file(file_path: Path, compressionExtension: str = DEFAULT_COMPRESSION_EXTENSION) -> Path:
     try:
         assert file_path.exists()
     except AssertionError:
-        fileUsageLogger.error(f"File Compression Service > file to compress could not be found at: {str(file_path.relative_to("./"))}")
+        fileUsageLogger.error(logIdentity + f"file to compress could not be found at: {str(file_path.relative_to("./"))}")
         raise AssertionError
 
     #get folder of path
@@ -28,9 +31,9 @@ def compress_single_file(file_path: Path, compressionExtension: str = DEFAULT_CO
             zipfile.write(file_path, arcname=file_path.name)
         
         assert outputZipPath.exists()
-        fileUsageLogger.debug(f"File Compression Service > new file was compressed: {str(outputZipPath.relative_to("./"))}")
+        fileUsageLogger.debug(logIdentity + f"new file was compressed: {str(outputZipPath.relative_to("./"))}")
     except Exception as err:
-        fileUsageLogger.error(f"File Compression Service > error during file compression process: {err.__class__.__name__}. Check uvicorn logs!")
+        fileUsageLogger.error(logIdentity + f"error during file compression process: {err.__class__.__name__}. Check uvicorn logs!")
         raise err
 
     return outputZipPath

@@ -43,7 +43,7 @@ COOKIES_BACKUP_FILE_PATH = "backup-cookies.txt"
 #Download and Compression configuration
 DOWNLOADS_FOLDER_PATH_MP3 = Path("./mp3-downloads")
 DOWNLOADS_FOLDER_PATH_MP4 = Path("./mp4-downloads")
-COMPRESSION_FOLDER_PATH = Path("./file-compressions") 
+COMPRESSION_FOLDER_PATH = Path("./file-compressions")
 
 QUIET_EXECUTION_OPTION: bool = True #no logs from yt-dlp if True
 
@@ -87,17 +87,12 @@ DEFAULT_COMPRESSION_EXTENSION = '.7z'
 
 #* Logger configuration (paths and formats)
 BASE_LOGS_PATH: str = "./src/logs/"
-defaultFormatter = '#API_LOG > %(asctime)s - %(levelname)s - %(message)s'
+defaultFormatter = '%(asctime)s - %(levelname)s - %(message)s'
+friendlyStreamFormatter = '%(levelname)s:     %(message)s - at %(asctime)s in runtime.' #? can be updated to include colors
 
 #DateTime configs
 defaultTimezone = "-03:00" #! not used, need fix
 defaultTimeFormat = "%d-%m(%y) %H:%M:%S"
-
-#! mp4 are downloading at 360 30fps maximum!
-mp4_lowQualityMessage_md = """
-<br>
-**NOTE:** video downloads are available only at 360p, 30fps quality.
-"""
 
 #SlowAPI - request limiter
 DEFAULT_REQUEST_IP_LIMIT: str = "10/minute" # can be 20/second, 2/minute...

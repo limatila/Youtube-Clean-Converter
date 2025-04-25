@@ -8,7 +8,12 @@ from src.routers import *
 from src.config import API_DETAILS
 from src.services.validators.cookieValidation import validate_cookies
 from src.middleware.requestLimiters import globalLimiter
+from src.middleware.loggers import _initLoggers
 
+#settup loggers and create files
+_initLoggers()
+
+#API definition
 app = FastAPI (
     version=API_DETAILS['version'],
     title=API_DETAILS['name'],
