@@ -1,8 +1,7 @@
 # Youtube Clean Converter
-### Welcome! If you're having any problems in the website, feel free to open an issue!
-### Bem-vindo! Se você está tendo problemas no website, porfavor crie um issue!
+### Welcome! If you're having any problems with usage, feel free to open an issue!
+### Bem-vindo! Se você está tendo problemas usando a API, porfavor crie um issue!
 
-[Website (Up and Running)](https://bit.ly/YoutubeCleanConverter) <br>
 [Linkedin Post](https://www.linkedin.com/feed/update/urn:li:ugcPost:7317375614452170752/) <br>
 **Email me** If you need help: [atilalimade@gmail.com](mailto:atilalimade@gmail.com)
 
@@ -15,8 +14,8 @@
 O sistema permite baixar arquivos de áudio (.mp3) e vídeo (.mp4) diretamente via uma interface Web e também por meio de requisições à API.
 Utilizando FastAPI e Uvicorn, o sistema foi criado para ser fácil de implementar tanto em ambientes locais quanto na AWS (Ubuntu).
 
-### Como Usar a API online
-1. Acesse o [site de API do Youtube Clean Converter](https://bit.ly/YoutubeCleanConverter).
+### Como Usar a API
+1. Acesse o site da api, rodando em localhost ou online.
 2. Escolha um serviço oferecido na lista para download (aúdio ou vídeo, e também comprimido).
 3. Pressione o botão de testar a API, e cole o seu link na caixa de entrada.
 4. Clique no botão de download e aguarde que o arquivo seja processado.
@@ -26,7 +25,7 @@ Utilizando FastAPI e Uvicorn, o sistema foi criado para ser fácil de implementa
 
 #### Pré-requisitos:
 - Python 3.11
-- py VEnv (opcional, mas recomendado)
+- Python VEnv (opcional, mas recomendado)
 - Dependências (listadas no `requirements.txt`, como *FastAPI* e *yt-dlp*)
 
 #### Passos para instalação local:
@@ -75,7 +74,7 @@ The system allows downloading audio (.mp3) and video (.mp4) files directly via t
 Built with FastAPI and Uvicorn, it’s designed to be easily deployed locally or on AWS (Ubuntu).
 
 ### How to Use the Online API
-1. Visit the [Youtube Clean Converter API site](https://bit.ly/YoutubeCleanConverter).
+1. Visit the API site, on localhost or online.
 2. Choose a service from the list (audio, video, or compressed file).
 3. Press the test button and paste your YouTube link into the input field.
 4. Click download and wait for the file to be processed.
@@ -85,7 +84,7 @@ Built with FastAPI and Uvicorn, it’s designed to be easily deployed locally or
 
 #### Prerequisites:
 - Python 3.11
-- py VEnv (optional but recommended)
+- Python VEnv (optional but recommended)
 - Dependencies (listed in `requirements.txt`, such as *FastAPI* and *yt-dlp*)
 
 #### Local Setup Steps:
