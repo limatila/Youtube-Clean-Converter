@@ -15,7 +15,7 @@ def update_cookies():
             with open(COOKIES_FILE_PATH, 'w') as cookies:
                 backupLines = backup.read()
                 cookies.write(backupLines)
-                cookiesLogger.info(f"Changes in {COOKIES_FILE_PATH} detected; Cookiefile was updated with backup.")
+                cookiesLogger.debug(f"Changes in {COOKIES_FILE_PATH} detected; Cookiefile was updated with backup.")
     except FileNotFoundError as err:
         errorMessage = f"Cookiefile was not found in path {err.filename}, and is needed. For info in how to extract cookies, go to \'https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies\'"
         cookiesLogger.error(errorMessage)

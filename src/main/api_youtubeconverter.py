@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 
 from src.routers import *
 from src.config import API_DETAILS
@@ -20,9 +20,12 @@ app = FastAPI (
     summary=API_DETAILS['summary'],
     description=API_DETAILS['description_md']
 )
+
+#Adding api Middleware
 app.state.limiter = globalLimiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
+app.add_middleware(ProxyHeadersMiddleware)
 
 app.include_router(downloads_router)
 app.include_router(compressions_router)
