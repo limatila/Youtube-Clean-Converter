@@ -50,7 +50,7 @@ notepad backup-cookies.txt #copie também aqui
 # veja em 'src/config.py'
 
 # Inicie o servidor
-uvicorn src.main.api_cleanconverter:app --host 0.0.0.0 --port 55002 #--reload
+uvicorn src.main.api_youtubeconverter:app --host 0.0.0.0 --port 55002 #--reload
 ```
 Tudo certinho, você pode ver a documentação da API em: `http://localhost:55002/docs`, ou outro IP / DNS
 
@@ -109,7 +109,7 @@ notepad backup-cookies.txt #also here
 # check 'src/config.py'
 
 # Start the server
-uvicorn src.main.api_cleanconverter:app --host 0.0.0.0 --port 55002 #--reload
+uvicorn src.main.api_youtubeconverter:app --host 0.0.0.0 --port 55002 #--reload
 ```
 Once everything is ready, access the API documentation at: `http://localhost:55002/docs`, or your custom IP / DNS.
 #### Note: for cookie configuration help, visit [HERE](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
